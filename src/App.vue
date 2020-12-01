@@ -3,9 +3,9 @@
     <Header @addchange="HandleAddStatus" />
     <TodoList @accompulish="HandleStatus" :TodoList="TodoList" />
     <Add
-      @addTransaction="add"
+      @addtransaction="add"
       @toast="HandleToast"
-      :addStatus="current.changeAdd"
+      :addstatus="current.changeAdd"
     />
     <Toast :isShow="current" />
   </div>

@@ -1,10 +1,11 @@
 import { defineComponent, provide, shallowReactive, inject, computed } from 'vue'
 import MenuBar from "../MenuBar/MenuBar.vue"
+import { TodoListType } from "../../InterfaceType/TodoList"
 export default defineComponent({
     name: 'Header',
-    props:{
-        TodoListData:{
-            type:Array,
+    props: {
+        TodoListData: {
+            type: Array,
             default: () => []
         }
     },
@@ -52,7 +53,7 @@ export default defineComponent({
             state.flag = !state.flag
             context.emit("addchange", state.flag)
         }
-        const count = computed(() => Array.from(inject("TodoListData")).length)
+        const count = computed(() => Array.from((inject("TodoListData") as TodoListType[])).length)
         return { date, week, month, state, handelTrigger, count }
     }
 })

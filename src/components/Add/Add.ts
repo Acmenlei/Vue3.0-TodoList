@@ -2,7 +2,7 @@ import { computed, defineComponent, ref, shallowReactive } from 'vue'
 export default defineComponent({
   name: 'Add',
   props: {
-    addStatus: {
+    addstatus: {
       type: Boolean,
       default: false
     }
@@ -14,10 +14,10 @@ export default defineComponent({
       status: false
     })
     const flag = ref(false)
-    const addStatus = computed(() => props.addStatus)
+    const addStatus = computed(() => props.addstatus)
     const Confirm = () => {
       if (!FormModel.content) { return }
-      context.emit("addTransaction", FormModel)
+      context.emit("addtransaction", FormModel)
       context.emit("toast")
       flag.value = false
       FormModel.content = ""

@@ -1,4 +1,6 @@
-import { defineComponent,  computed } from 'vue'
+import { defineComponent, computed, toRefs } from 'vue'
+import { TodoListType } from "../../InterfaceType/TodoList"
+
 export default defineComponent({
     name: 'Progress',
     props: {
@@ -8,10 +10,10 @@ export default defineComponent({
         }
     },
     setup(props) {
-        let data = props.TodoList
-        let accomplishCount = computed(() => data.filter(_ => _.status == true).length)
-        let length = computed(() => data.length)
-        let result = computed(() => accomplishCount.value / length.value * 100)
+        const data = toRefs(props).TodoList.value
+        const accomplishCount = computed(() => data.filter(_ => (_ as TodoListType).status == true).length)
+        const length = computed(() => data.length)
+        const result = computed(() => accomplishCount.value / length.value * 100)
         return { accomplishCount, length, result }
     },
 })
