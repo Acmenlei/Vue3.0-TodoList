@@ -1,0 +1,19 @@
+@import "./assets/iconfont/iconfont.css";
+@font-face {
+  font-family: Okomito;
+  src: url('./assets/font/Okomito.ttf'),
+    url('./assets/font/Okomito.ttf');
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Okomito;
+}
+
+body,
+html {
+  background: #f1f1f1;
+}
+

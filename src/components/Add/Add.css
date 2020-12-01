@@ -1,0 +1,141 @@
+#Add {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.add {
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    border-radius: 50%;
+    position: fixed;
+    right: .55rem;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1777E5;
+    z-index: 99;
+    transition: all .5s;
+}
+
+.add>span {
+    display: block;
+    height: .15rem;
+    width: 1.5rem;
+    background: #1777E5;
+    border-radius: 10px;
+}
+
+.add>span:nth-child(1) {
+    transform: rotate(90deg);
+}
+
+.add>span:nth-child(2) {
+    transform: translateY(-3px);
+}
+
+.form-contaienr-add {
+    width: 80vw;
+    height: 50vh;
+    background: white;
+    position: fixed;
+    transition: all .5s linear;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-contaienr-add h3 {
+    width: 80%;
+    margin: 1rem 0;
+    color: #555;
+}
+
+.form-contaienr-add select,
+.form-contaienr-add textarea {
+    width: 80%;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    padding: .3rem 0;
+    margin-bottom: 1rem;
+    transition: all .3s;
+    background: #fff;
+    text-indent: .5em;
+}
+
+.form-contaienr-add textarea {
+    resize: none;
+}
+
+.form-contaienr-add select option {
+    border: 0;
+
+}
+
+.form-contaienr-add textarea:focus {
+    border: 1px solid #1777E5;
+}
+
+.btn {
+    margin: .5rem 1rem;
+    align-self: flex-end;
+}
+
+.btn button {
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: none;
+    margin-right: .8rem;
+    outline: none;
+    transition: all .4s;
+}
+
+.btn button:hover {
+    opacity: .8;
+}
+
+.btn button:nth-child(1) {
+    background: #1777E5;
+    color: white;
+}
+
+.btn button:nth-child(2) {
+    background: #fff;
+    color: #555;
+    border: 1px solid #1777E5;
+}
+
+.confirm {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cancel {
+    left: 100%;
+    top: 120%;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.btn-cancel {
+    display: none;
+}
+
+.noActive {
+    width: 0;
+    height: 0;
+    border: 0;
+}
+
+.noActive span {
+    transition: all .6s;
+    width: 0;
+    height: 0;
+}

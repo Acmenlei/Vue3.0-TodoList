@@ -1,0 +1,40 @@
+#Categroy {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem 0;
+    padding: .4rem .4rem .4rem .2rem;
+    overflow-x: auto;
+}
+#Categroy>div {
+    padding: 1.2rem .5rem;
+    margin-left: .5rem;
+    color: #e9e9e9;
+    border-radius: .5rem;
+    width: 8rem;
+}
+
+#Categroy>div>p:nth-child(1) {
+    font-size: 1.2rem;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+#Categroy>div>p:nth-child(2) {
+    font-size: .8rem;
+    margin-top: .1rem;
+}
+
+.life {
+    background: #FE7058;
+}
+
+.work {
+    background: #5D5BFE;
+}
+
+.study {
+    background: #FDAA49;
+}

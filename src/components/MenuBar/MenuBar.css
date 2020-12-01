@@ -1,0 +1,11 @@
+#MenuBar {
+    height: 100vh;
+    width: 15rem;
+    position: absolute;
+    background: #fff;
+    top: 0;
+    transition: all .5s;
+    z-index: 99;
+    line-height: 100vh;
+    text-align: center;
+}
