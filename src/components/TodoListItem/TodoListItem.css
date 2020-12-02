@@ -2,27 +2,94 @@
     padding: 0 .5rem;
 }
 
-.item {
-    padding: .8rem 0 .8rem 0;
-    position: relative;
+#noTodo {
+    text-align: center;
     display: flex;
+    justify-content: center;
+    padding-left: 3rem;
+    padding-right: .5rem;
+    padding-top: 2rem;
 }
-.item h3 {
-    font-weight: normal;
-    flex: 2;
+#noTodo img {
+    width: 8rem;
 }
-/* .item::before {
+#noTodo p {
+    padding: 1.2rem .5rem;
+    color: #333;
+    font-weight: bold;
+    width: 10rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: white;
+    font-size: .9rem;
+    box-shadow: 0 0 3px #ccc ;
+    position: relative;
+}
+#noTodo p::after,#noTodo p::before {
     content: "";
-    width: 1rem;
-    height: 1rem;
-    display: inline-block;
-    border: 2px solid #000;
+    display: block;
+    background: white;
+    box-shadow: 0 0 3px #ccc ;
     position: absolute;
     border-radius: 50%;
-    left: .2rem;
-    top: 1rem;
-    border-color: greenyellow;
-} */
+}
+#noTodo p::after {
+    width: 1rem;
+    height: 1rem;
+    left: -.4rem;
+    bottom: .5rem;
+}
+#noTodo p::before {
+    width: .6rem;
+    height: .6rem;
+    left: -1rem;
+    bottom: .2rem;
+
+}
+.container .item {
+    padding: .8rem .5rem;
+    margin: .8rem 0;
+    position: relative;
+    display: flex;
+    transition: all .2s;
+    flex-wrap: nowrap;
+    background: #f5f5f5;
+    border-radius: .5rem;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.container .time .icon-zhongguohangtiantubiaoheji-weizhuanlunkuo- {
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    color: #1777E5;
+    font-weight: bold;
+    position: relative;
+    top: .1rem;
+}
+
+.container .item h4 {
+    font-weight: normal;
+    flex: 2;
+    margin: 0 .5rem;
+}
+.container .item span {
+    color: #eee;
+    font-size: .7rem;
+    background: #1777E5;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    align-self: center;
+    text-align: center;
+    box-shadow: 0 0 3px #1777E5;
+}
+.container .time {
+    font-size: .8rem;
+    color: #999;
+    margin-top: -.7rem;
+}
+
 .capsule {
     width: 3rem;
     height: 1.5rem;
@@ -30,23 +97,40 @@
     border: 1px solid #ccc;
     position: relative;
     transition: all .8s;
+    align-self: center;
 
 }
+
 .isChecked {
-    background: rgb(73, 194, 241);
+    background: #1777E5;
 }
+
 .capsule .ball {
     height: 1.45rem;
     width: 1.5rem;
     border-radius: 1rem;
-    background:#1777E5;
+    background: #fff;
     position: absolute;
     left: 0;
     top: 0;
     transition: all .3s;
+    border: 1px solid #1777E5;
 
 }
 
 .capsule .current {
     transform: translateX(1.5rem);
+}
+
+.del {
+    transform: translateX(-5rem);
+}
+
+.delete {
+    position: absolute;
+    right: -4rem;
+    color: orangered;
+    align-self: center;
+    margin-left: 1rem;
+    font-weight: bold;
 }

@@ -2,7 +2,7 @@
     height: 2rem;
     width: 40%;
     background: #F2F8EC;
-    position: absolute;
+    position: fixed;
     top: -3rem;
     left: calc(50% - 20%);
     border-radius: .5rem;

@@ -1,4 +1,5 @@
 @import "./assets/iconfont/iconfont.css";
+
 @font-face {
   font-family: Okomito;
   src: url('./assets/font/Okomito.ttf'),
@@ -14,6 +15,8 @@
 
 body,
 html {
-  background: #f1f1f1;
+  background: #f2f2f2;
+  height: 100%;
+  overflow-x: hidden;
 }
 

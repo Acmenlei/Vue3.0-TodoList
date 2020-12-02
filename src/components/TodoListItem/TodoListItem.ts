@@ -1,23 +1,48 @@
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, shallowReactive, toRefs, watch } from 'vue'
 export default defineComponent({
     name: 'TodoListItem',
     props: {
-        TodoList: {
+        TodoLists: {
             type: Array,
             default: () => []
         }
     },
     setup(props, context) {
         /* 数据 */
-        let currentIndex = ref([])
+        const currentIndex = ref([])
+        let s: number, d: number;
+        /* 操作删除按钮数据*/
+        const delState = shallowReactive({
+            currentIndex: -1
+        })
         /* 状态切换 */
-        const handelTrigger = (i:number) => {
+        const handelTrigger = (i: number, type?: string) => {
             /* 修改状态 */
-            context.emit("accompulish", i)
+            type ? context.emit("accompulish", { type: "delete", index: i }) : context.emit("accompulish", i)
         }
+        const start = (e: any) => {
+            s = parseInt(e.changedTouches[0].clientX)
+        }
+        const end = (e: any, i: number) => {
+            d = parseInt(e.changedTouches[0].clientX)
+            const target = s - d
+            if (target >= 30) {
+                delState.currentIndex = i
+            }
+            if (target <= -30) {
+                delState.currentIndex = -1
+            }
+        }
+        const delTodoItem = (i: number) => {
+            handelTrigger(i, "delete")
+        }
+        /* 监听状态，重置currentIndex */
+        watch(props.TodoLists, () => {
+            delState.currentIndex = -1
+        })
         /* 接收值 */
-        let TodoListData = props.TodoList
+        const TodoList = toRefs(props).TodoLists
 
-        return { TodoListData, currentIndex, handelTrigger }
+        return { TodoList, currentIndex, delState, handelTrigger, delTodoItem, start, end }
     }
 })

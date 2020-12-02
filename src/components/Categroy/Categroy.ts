@@ -4,9 +4,10 @@ import { TodoListType } from "../../InterfaceType/TodoList"
 export default defineComponent({
     name: 'Categroy',
     setup() {
-        const lifeCount = computed((): number => Array.from(inject("TodoListData") as TodoListType[]).filter(_ => _.type === "Life").length)
-        const workCount = computed((): number => Array.from(inject("TodoListData") as TodoListType[]).filter(_ => _.type === "Work").length)
-        const studyCount = computed((): number => Array.from(inject("TodoListData") as TodoListType[]).filter(_ => _.type === "Study").length)
+        const data = inject("TodoListData") as TodoListType[]
+        const lifeCount = computed((): number => data.filter(_ => _.type === "生活计划").length)
+        const workCount = computed((): number => data.filter(_ => _.type === "工作计划").length)
+        const studyCount = computed((): number => data.filter(_ => _.type === "学习计划").length)
         return {
             lifeCount, workCount, studyCount
         }

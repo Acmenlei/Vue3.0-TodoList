@@ -1,16 +1,16 @@
 <template>
   <div id="Categroy">
       <div class="life">
-          <p>Life plan</p>
-          <p>{{lifeCount}} items</p>
+          <p>生活计划</p>
+          <p>{{lifeCount}} 项</p>
       </div>
       <div class="work">
-          <p>Work plan</p>
-          <p>{{workCount}} items</p>
+          <p>工作计划</p>
+          <p>{{workCount}} 项</p>
       </div>
       <div class="study">
-          <p>Study plan</p>
-          <p>{{studyCount}} items</p>
+          <p>学习计划</p>
+          <p>{{studyCount}} 项</p>
       </div>
   </div>
 </template>

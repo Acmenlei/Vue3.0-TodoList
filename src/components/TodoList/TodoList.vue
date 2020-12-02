@@ -2,7 +2,7 @@
   <div id="TodoList">
     <Categroy :TodoList = "TodoLists"/>
     <Progress :TodoList = "TodoLists"/>
-    <TodoListItem @accompulish="EventForward" :TodoList = "TodoLists"/>
+    <TodoListItem @accompulish="EventForward" :TodoLists = "TodoLists"/>
   </div>
 </template>
 

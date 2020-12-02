@@ -9,7 +9,7 @@
     height: .8rem;
 }
 
-.title h2 {
+.title h3 {
     color: #333333;
     font-weight: normal;
     margin-bottom: .5rem;
@@ -17,12 +17,12 @@
     justify-content: space-between;
     align-items: center;
 }
-.title h2 span i {
+.title h3 span i {
     color: #167CEE;
     margin-left: 2rem;
 }
-.title h2 span i::after {
-    content: "Today's business is complete！";
+.title h3 span i::after {
+    content: "计划已经全部完成啦！";
     font-weight: bold;
     font-size: .8rem;
     margin-left: .5rem;

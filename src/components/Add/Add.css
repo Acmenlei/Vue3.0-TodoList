@@ -16,8 +16,8 @@
     justify-content: center;
     align-items: center;
     border: 1px solid #1777E5;
-    z-index: 99;
-    transition: all .5s;
+    z-index: 1;
+    transition: all .3s linear;
 }
 
 .add>span {
@@ -41,7 +41,7 @@
     height: 50vh;
     background: white;
     position: fixed;
-    transition: all .5s linear;
+    transition: all .3s linear;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
@@ -92,7 +92,7 @@
     border: none;
     margin-right: .8rem;
     outline: none;
-    transition: all .4s;
+    transition: all .3s;
 }
 
 .btn button:hover {
@@ -135,7 +135,7 @@
 }
 
 .noActive span {
-    transition: all .6s;
+    transition: all .3s;
     width: 0;
     height: 0;
 }

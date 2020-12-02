@@ -1,8 +1,9 @@
 import { defineComponent, inject } from 'vue'
 export default defineComponent({
     name: 'MenuBar',
+    emits: ["handleMenu"],
     setup() {
-        let status = inject("MenuBarStatus")
+        const status = inject("MenuBarStatus")
         return { status }
     },
 })

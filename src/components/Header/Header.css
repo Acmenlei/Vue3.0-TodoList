@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .left {
@@ -15,8 +16,6 @@
 .right {
     padding-right: 1rem;
 }
-
-
 
 .right span {
     display: block;
@@ -48,4 +47,13 @@
 
 .time span {
     padding: 0 .1rem;
+}
+
+i {
+    position: absolute;
+    right: 1rem;
+    font-size: 1.7rem;
+    color: #f1f1f1;
+    font-weight: bold;
+    top: 7rem;
 }

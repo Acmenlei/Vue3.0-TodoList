@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "10939124",
+      "name": "删除清空",
+      "font_class": "btn_delete",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "5703269",
+      "name": "危险的闪电",
+      "font_class": "zhongguohangtiantubiaoheji-weizhuanlunkuo-",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
       "icon_id": "6999238",
       "name": "成功",
       "font_class": "chenggong",

@@ -4,11 +4,12 @@ export default defineComponent({
     props: {
         isShow: {
             type: Object,
-            default: () => { }
+            default: () => ({})
         }
     },
     setup(props) {
         const flag = computed(() => props.isShow.status)
-        return { flag }
+        const isdel = computed(() => props.isShow.isdel)
+        return { flag, isdel }
     }
 })

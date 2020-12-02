@@ -1,10 +1,11 @@
 <template>
   <div id="Header">
     <div class="left">
-      <div class="count">Projects {{count}}</div>
+      <div class="count">剩余待办 {{count}} 项</div>
       <div class="time">
-        <span>{{ month[date.month] }}.</span>
-        <span>{{ date.day }}</span>
+        <span>{{ date.year }} 年</span>
+        <span>{{ date.month }} 月</span>
+        <span>{{ date.day }} 日</span>
         <span>{{ week[date.weekDay] }}</span>
       </div>
     </div>
@@ -13,8 +14,10 @@
       <span :class="{'current2': state.flag}"></span>
       <span v-show="!state.flag"></span>
     </div>
+      <i @click="clearTodo" class="iconfont icon-btn_delete"></i>
   </div>
-  <MenuBar/>
+
+  <MenuBar />
 </template>
 
 <script src="./Header.ts"></script>

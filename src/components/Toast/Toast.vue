@@ -1,7 +1,7 @@
 <template>
   <div id="Toast" :class="[flag ? 'current' : '']">
     <i class="iconfont icon-chenggong"></i>
-    success
+    {{isdel ? '删除成功!' : '操作成功!'}}
   </div>
 </template>
 

@@ -10,38 +10,24 @@ export default defineComponent({
         }
     },
     components: { MenuBar },
-    emits: ["addchange"],
-    setup(props, context) {
+    emits: ["addchange", "cleartodo"],
+    setup(props, { emit }) {
         /* 非递归响应数据 */
         const date = shallowReactive({
+            year: new Date().getFullYear(),
             month: new Date().getMonth() + 1,
             day: new Date().getDate(),
             weekDay: new Date().getDay()
         })
         /* 星期转化 */
         const week = shallowReactive({
-            "1": "Monday",
-            "2": "Tuseday",
-            "3": "Wednesday",
-            "4": "Thursday",
-            "5": "Friday",
-            "6": "Saturday",
-            "7": "Sunday"
-        })
-        /* 月份转化 */
-        const month = shallowReactive({
-            "1": "January",
-            "2": "February",
-            "3": "March",
-            "4": "April",
-            "5": "May",
-            "6": "June",
-            "7": "July",
-            "8": "August",
-            "9": "September",
-            "10": "October",
-            "11": "November",
-            "12": "December"
+            "1": "星期一",
+            "2": "星期二",
+            "3": "星期三",
+            "4": "星期四",
+            "5": "星期五",
+            "6": "星期六",
+            "7": "星期日"
         })
         const state = shallowReactive({
             flag: false
@@ -51,9 +37,14 @@ export default defineComponent({
         /* 事件函数 */
         const handelTrigger = () => {
             state.flag = !state.flag
-            context.emit("addchange", state.flag)
+            emit("addchange", state.flag)
         }
-        const count = computed(() => Array.from((inject("TodoListData") as TodoListType[])).length)
-        return { date, week, month, state, handelTrigger, count }
+        /* 清空todo */
+        const clearTodo = () => {
+            emit("cleartodo")
+        }
+        const TodoListData = inject("TodoListData") as TodoListType[]
+        const count = computed(() => TodoListData.length)
+        return { date, week, state, count, handelTrigger, clearTodo }
     }
 })

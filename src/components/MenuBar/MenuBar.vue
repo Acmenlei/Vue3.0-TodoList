@@ -1,6 +1,6 @@
 <template>
   <div id="MenuBar" :style="{'left': status.flag ? '0' : '-15rem'}">
-      development...
+      <p>有任何问题联系作者vx：x972761675</p>
   </div>
 </template>
 

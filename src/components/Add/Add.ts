@@ -1,6 +1,10 @@
 import { computed, defineComponent, ref, shallowReactive } from 'vue'
+import Dialog from "../Dialog/Dialog.vue"
+
 export default defineComponent({
   name: 'Add',
+  emits:["addtransaction","toast"],
+  components:{Dialog},
   props: {
     addstatus: {
       type: Boolean,
@@ -10,13 +14,15 @@ export default defineComponent({
   setup(props, context) {
     const FormModel = shallowReactive({
       content: "",
-      type: "Life",
-      status: false
+      type: "生活计划",
+      status: false,
+      date: ''
     })
     const flag = ref(false)
     const addStatus = computed(() => props.addstatus)
     const Confirm = () => {
       if (!FormModel.content) { return }
+      FormModel.date = new Date().toLocaleDateString().replace("/", "年").replace("/","月")+"日"+new Date().toLocaleTimeString()
       context.emit("addtransaction", FormModel)
       context.emit("toast")
       flag.value = false
