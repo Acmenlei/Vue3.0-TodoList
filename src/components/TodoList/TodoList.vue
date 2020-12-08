@@ -1,6 +1,6 @@
 <template>
   <div id="TodoList">
-    <Categroy :TodoList = "TodoLists"/>
+    <Categroy :TodoList = "TodoLists" @todofilter="todoFilter"/>
     <Progress :TodoList = "TodoLists"/>
     <TodoListItem @accompulish="EventForward" :TodoLists = "TodoLists"/>
   </div>

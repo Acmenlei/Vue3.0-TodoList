@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <Header @addchange="HandleAddStatus" @cleartodo="clearTodo" />
-    <TodoList @accompulish="HandleStatus" :TodoList="TodoList" />
+    <TodoList
+      @accompulish="HandleStatus"
+      @todofilter="todoFilter"
+      :TodoList="TodoList"
+    />
     <Add
       @addtransaction="add"
       @toast="HandleToast"
@@ -120,6 +124,10 @@ export default defineComponent({
       current.dialog = true;
       current.isEmpty = true;
     };
+    /* 事务过滤 */
+    const todoFilter = (type) => {
+       console.log(type);
+    }
     return {
       TodoList,
       HandleStatus,
@@ -130,6 +138,7 @@ export default defineComponent({
       confirmDialog,
       cancelDialog,
       clearTodo,
+      todoFilter
     };
   },
 });

@@ -6,7 +6,7 @@
 .add {
     width: 3rem;
     height: 3rem;
-    background: #fff;
+    background:  #1777E5;
     border-radius: 50%;
     position: fixed;
     right: .55rem;
@@ -15,16 +15,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #1777E5;
     z-index: 1;
     transition: all .3s linear;
+    box-shadow: 0 0 15px #999;
 }
 
 .add>span {
     display: block;
-    height: .15rem;
-    width: 1.5rem;
-    background: #1777E5;
+    height: .12rem;
+    width: 1rem;
+    background: #fff;
     border-radius: 10px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .add>span:nth-child(2) {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .form-contaienr-add {

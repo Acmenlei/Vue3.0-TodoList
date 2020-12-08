@@ -3,12 +3,6 @@ import MenuBar from "../MenuBar/MenuBar.vue"
 import { TodoListType } from "../../InterfaceType/TodoList"
 export default defineComponent({
     name: 'Header',
-    props: {
-        TodoListData: {
-            type: Array,
-            default: () => []
-        }
-    },
     components: { MenuBar },
     emits: ["addchange", "cleartodo"],
     setup(props, { emit }) {
@@ -44,7 +38,8 @@ export default defineComponent({
             emit("cleartodo")
         }
         const TodoListData = inject("TodoListData") as TodoListType[]
-        const count = computed(() => TodoListData.length)
+        /* 过滤还未办理项目 */
+        const count = computed((): number => TodoListData.filter(_ => _.status === false).length)
         return { date, week, state, count, handelTrigger, clearTodo }
     }
 })

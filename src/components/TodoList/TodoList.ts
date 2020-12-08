@@ -10,14 +10,19 @@ export default defineComponent({
             default: () => []
         }
     },
+    emits:["todofilter","accompulish"],
     components: { TodoListItem, Categroy, Progress },
-    setup(props, context) {
+    setup(props, {emit}) {
         /* 传值 */
         const TodoLists = toRefs(props).TodoList
         /* 将事件转发给父组件 */
         const EventForward = (i: number | object) => {
-            context.emit("accompulish", i)
+            emit("accompulish", i)
         }
-        return { TodoLists, EventForward }
+
+        const todoFilter = (type: string) =>{
+            emit("todofilter", type)
+        }
+        return { TodoLists, EventForward, todoFilter}
     }
 })
